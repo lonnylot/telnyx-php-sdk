@@ -4,7 +4,7 @@ namespace Lonnylot\Telnyx\V2;
 
 use CrudSugar\Concerns\IsEndpoint;
 
-class NumberSearch implements Endpoint {
+class NumberSearch {
 
   use IsEndpoint;
 
