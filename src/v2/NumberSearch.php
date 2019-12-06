@@ -8,9 +8,8 @@ class NumberSearch {
 
   use IsEndpoint;
 
-  private $path = 'available_phone_numbers';
-
-  public function all($params = []) {
-    return $this->client->request('GET', $this->path, $params);
+  public function boot() {
+    $this->path = 'available_phone_numbers';
+    $this->resources = ['index'];
   }
 }

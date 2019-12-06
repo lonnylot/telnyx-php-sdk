@@ -29,8 +29,27 @@ $client = \Lonnylot\Telnyx\V2\Client::getInstance('telnyxV2');
 $client->setApiKey('<your key>');
 ```
 
-#### Use Endpoints
+#### Use Endpoint
 
 ```php
-$client->numberSearch->all(['filter' => ['limit' => 3]]);
+$client->numberSearch->index(['filter' => ['limit' => 3]]);
 ```
+
+#### Available Resources
+
+The resources are named as follows:
+
+1. `index` - Telnyx "List"
+1. `show` - Telnyx "Retrieve"
+1. `update` - Telnyx "Update"
+1. `delete` - Telnyx "Delete"
+1. `store` - Telnyx "Create"
+
+#### Available Endpoints
+
+1. `messagingProfile`
+1. `numberOrder`
+1. `numberSearch`
+1. `phoneNumber`
+1. `phoneNumberMessaging`
+1. `phoneNumberVoice`

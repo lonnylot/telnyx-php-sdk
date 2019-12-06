@@ -13,11 +13,16 @@
         }
     ],
     "require": {
-        "lonnylot/crud-sugar": "dev-master"
+        "lonnylot/crud-sugar": "dev-master#3218d19"
     },
     "autoload": {
       "psr-4": {
         "Lonnylot\\Telnyx\\V2\\": "src/v2"
       }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     }
 }
