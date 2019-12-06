@@ -2,18 +2,15 @@
 
 namespace Lonnylot\Telnyx\V2;
 
-use CrudSugar\Concerns\Endpoints;
+use CrudSugar\Concerns\IsEndpoint;
 
-class NumberSearch implements Endpoints {
-  private $client;
+class NumberSearch implements Endpoint {
 
-  private $endpoint = 'available_phone_numbers';
+  use IsEndpoint;
 
-  public function __construct(Client $client) {
-    $this->client = $client;
-  }
+  private $path = 'available_phone_numbers';
 
   public function all($params = []) {
-    return $this->client->request('GET', $this->endpoint, $params);
+    return $this->client->request('GET', $this->path, $params);
   }
 }

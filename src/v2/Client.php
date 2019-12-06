@@ -8,6 +8,7 @@ class Client extends BaseClient {
   protected function __construct($name) {
     parent::__construct($name);
 
+    $this->setBaseUrl('https://api.telnyx.com/v2/');
     $this->registerEndpoints();
   }
 
