@@ -19,5 +19,5 @@
       "psr-4": {
         "Lonnylot\\Telnyx\\V2": "src/v2"
       }
-    },
+    }
 }
