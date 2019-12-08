@@ -1,17 +1,17 @@
 <?php
 
-namespace Tests\Feature\V2;
+namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class PhoneNumberVoiceTest extends TestCase {
+class PhoneNumberTest extends TestCase {
   public function testIndex() {
     // Given
     $client = $this->getClient();
     $data = [];
 
     // When
-    $response = $client->phoneNumberVoice->index($data);
+    $response = $client->phoneNumber->index($data);
 
     // Then
     $this->assertTrue($response->isSuccessful());
@@ -22,18 +22,18 @@ class PhoneNumberVoiceTest extends TestCase {
     $client = $this->getClient();
     $data = [
       'id' => uniqid(),
-      'tech_prefix_enabled' => true
+      'connection_id' => uniqid()
     ];
 
     // When
-    $response = $client->phoneNumberVoice->update($data);
+    $response = $client->phoneNumber->update($data);
 
     // Then
     $this->assertTrue($response->isSuccessful());
-    $this->assertEquals($data['tech_prefix_enabled'], $response->getContent()['data']['tech_prefix_enabled']);
+    $this->assertEquals($data['connection_id'], $response->getContent()['data']['connection_id']);
   }
 
-  public function testShow() {
+  public function testDelete() {
     // Given
     $client = $this->getClient();
     $data = [
@@ -41,7 +41,7 @@ class PhoneNumberVoiceTest extends TestCase {
     ];
 
     // When
-    $response = $client->phoneNumberVoice->show($data);
+    $response = $client->phoneNumber->delete($data);
 
     // Then
     $this->assertTrue($response->isSuccessful());

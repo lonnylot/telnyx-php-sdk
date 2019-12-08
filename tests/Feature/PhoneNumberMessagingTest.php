@@ -1,17 +1,18 @@
 <?php
 
-namespace Tests\Feature\V2;
+namespace Tests\Feature;
 
 use Tests\TestCase;
+use Ramsey\Uuid\Uuid;
 
-class PhoneNumberTest extends TestCase {
+class PhoneNumberMessagingTest extends TestCase {
   public function testIndex() {
     // Given
     $client = $this->getClient();
     $data = [];
 
     // When
-    $response = $client->phoneNumber->index($data);
+    $response = $client->phoneNumberMessaging->index($data);
 
     // Then
     $this->assertTrue($response->isSuccessful());
@@ -22,18 +23,18 @@ class PhoneNumberTest extends TestCase {
     $client = $this->getClient();
     $data = [
       'id' => uniqid(),
-      'connection_id' => uniqid()
+      'messaging_profile_id' => Uuid::uuid4()->toString()
     ];
 
     // When
-    $response = $client->phoneNumber->update($data);
+    $response = $client->phoneNumberMessaging->update($data);
 
     // Then
     $this->assertTrue($response->isSuccessful());
-    $this->assertEquals($data['connection_id'], $response->getContent()['data']['connection_id']);
+    $this->assertEquals($data['messaging_profile_id'], $response->getContent()['data']['messaging_profile_id']);
   }
 
-  public function testDelete() {
+  public function testShow() {
     // Given
     $client = $this->getClient();
     $data = [
@@ -41,7 +42,7 @@ class PhoneNumberTest extends TestCase {
     ];
 
     // When
-    $response = $client->phoneNumber->delete($data);
+    $response = $client->phoneNumberMessaging->show($data);
 
     // Then
     $this->assertTrue($response->isSuccessful());

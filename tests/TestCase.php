@@ -3,7 +3,7 @@
 namespace Tests;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
-use Lonnylot\Telnyx\V2\Client;
+use Lonnylot\Telnyx\Client;
 
 abstract class TestCase extends BaseTestCase {
   protected function setUp(): void {

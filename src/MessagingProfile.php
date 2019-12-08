@@ -1,6 +1,6 @@
 <?php
 
-namespace Lonnylot\Telnyx\V2;
+namespace Lonnylot\Telnyx;
 
 use CrudSugar\Concerns\IsEndpoint;
 
