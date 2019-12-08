@@ -2,10 +2,12 @@
 
 namespace Lonnylot\Telnyx\Laravel;
 
-use Illuminate\Support\ServiceProvider;
-use Lonnylot\Telnyx\V2\Client;
+use Lonnylot\Telnyx\Client;
 
-class TelnyxServiceProvider extends ServiceProvider
+use Illuminate\Contracts\Support\DeferrableProvider;
+use Illuminate\Support\ServiceProvider;
+
+class TelnyxServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
      * Register services.
@@ -17,8 +19,16 @@ class TelnyxServiceProvider extends ServiceProvider
         $this->app->singleton('Lonnylot\Telnyx\Client', function($app, $parameters = []) {
             $client = Client::getInstance('telnyx');
             $client->setApiKey(config('services.telnyx.api_key'));
+            $client->setValidator($app['validator']);
 
             return $client;
         });
+    }
+
+    public function provides()
+    {
+        return [
+            Client::class
+        ];
     }
 }
