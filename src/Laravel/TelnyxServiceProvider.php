@@ -19,7 +19,7 @@ class TelnyxServiceProvider extends ServiceProvider implements DeferrableProvide
         $this->app->singleton('Lonnylot\Telnyx\Client', function($app, $parameters = []) {
             $client = Client::getInstance('telnyx');
             $client->setApiKey(config('services.telnyx.api_key'));
-            $client->setValidator($app['validator']);
+            $client->setValidatorFactory($app['validator']);
 
             return $client;
         });
