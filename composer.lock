@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c1eb6f35320e125247e8b6b15953ec3",
+    "content-hash": "76d60b82c57d0d85487bf94c366fb38b",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -683,16 +683,16 @@
         },
         {
             "name": "lonnylot/crud-sugar",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lonnylot/crud-sugar.git",
-                "reference": "545f4bf"
+                "reference": "fd3a257a8b3a0a3449d5583f5efbe41722b55dba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lonnylot/crud-sugar/zipball/545f4bf",
-                "reference": "545f4bf",
+                "url": "https://api.github.com/repos/lonnylot/crud-sugar/zipball/fd3a257a8b3a0a3449d5583f5efbe41722b55dba",
+                "reference": "fd3a257a8b3a0a3449d5583f5efbe41722b55dba",
                 "shasum": ""
             },
             "require": {
@@ -719,7 +719,7 @@
                 }
             ],
             "description": "CRUD sugar for REST APIs",
-            "time": "2019-12-08T01:22:46+00:00"
+            "time": "2019-12-08T10:41:53+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -3106,9 +3106,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "lonnylot/crud-sugar": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

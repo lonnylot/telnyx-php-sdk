@@ -18,4 +18,8 @@ class Client extends BaseClient {
     $this->registerEndpointClass(PhoneNumberMessaging::class);
     $this->registerEndpointClass(PhoneNumberVoice::class);
   }
+
+  public function getUserAgent(): string {
+    return 'telnyx-php-sdk/dev';
+  }
 }
