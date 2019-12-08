@@ -9,7 +9,7 @@ class NumberSearch {
   use IsEndpoint;
 
   public function boot() {
-    $this->path = 'available_phone_numbers';
-    $this->resources = ['index'];
+    $this->setPath('available_phone_numbers');
+    $this->setResources(['index']);
   }
 }

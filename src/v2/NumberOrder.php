@@ -9,8 +9,8 @@ class NumberOrder {
   use IsEndpoint;
 
   public function boot() {
-    $this->path = 'number_orders';
-    $this->resources = ['index', 'store', 'show', 'update'];
-    $this->resourceMethods['update'] = 'PATCH';
+    $this->setPath('number_orders');
+    $this->setResources(['index', 'store', 'show', 'update']);
+    $this->setResourceMethod('update', 'PATCH');
   }
 }

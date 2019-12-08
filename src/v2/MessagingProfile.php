@@ -9,8 +9,8 @@ class MessagingProfile {
   use IsEndpoint;
 
   public function boot() {
-    $this->path = 'messaging_profiles';
-    $this->resources = ['index', 'store', 'delete', 'show', 'update'];
-    $this->resourceMethods['update'] = 'PATCH';
+    $this->setPath('messaging_profiles');
+    $this->setResources(['index', 'store', 'delete', 'show', 'update']);
+    $this->setResourceMethod('update', 'PATCH');
   }
 }

@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "lonnylot/crud-sugar": "dev-master#3218d19"
+        "lonnylot/crud-sugar": "dev-master#545f4bf"
     },
     "autoload": {
       "psr-4": {

@@ -9,12 +9,10 @@ class PhoneNumberMessaging {
   use IsEndpoint;
 
   public function boot() {
-    $this->path = 'phone_numbers/messaging';
-    $this->resources = ['index', 'show', 'update'];
-    $this->resourceMethods['update'] = 'PATCH';
-    $this->resourcePaths = [
-      'show' => 'phone_numbers/{id}/messaging',
-      'update' => 'phone_numbers/{id}/messaging'
-    ];
+    $this->setPath('phone_numbers/messaging');
+    $this->setResources(['index', 'show', 'update']);
+    $this->setResourceMethod('update', 'PATCH');
+    $this->setResourcePath('show', 'phone_numbers/{id}/messaging');
+    $this->setResourcePath('update', 'phone_numbers/{id}/messaging');
   }
 }
