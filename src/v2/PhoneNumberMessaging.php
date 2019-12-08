@@ -15,4 +15,11 @@ class PhoneNumberMessaging {
     $this->setResourcePath('show', 'phone_numbers/{id}/messaging');
     $this->setResourcePath('update', 'phone_numbers/{id}/messaging');
   }
+
+  public function validateUpdateRules() {
+    return [
+      'messaging_profile_id' => ['uuid'],
+      'messaging_product' => ['string'],
+    ];
+  }
 }

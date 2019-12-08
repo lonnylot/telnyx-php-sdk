@@ -3,6 +3,7 @@
 namespace Tests\Feature\V2;
 
 use Tests\TestCase;
+use Ramsey\Uuid\Uuid;
 
 class PhoneNumberMessagingTest extends TestCase {
   public function testIndex() {
@@ -22,7 +23,7 @@ class PhoneNumberMessagingTest extends TestCase {
     $client = $this->getClient();
     $data = [
       'id' => uniqid(),
-      'messaging_profile_id' => uniqid()
+      'messaging_profile_id' => Uuid::uuid4()->toString()
     ];
 
     // When
