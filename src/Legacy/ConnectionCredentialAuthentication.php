@@ -9,8 +9,8 @@ class ConnectionCredentialAuthentication {
   use IsEndpoint;
 
   public function boot() {
-    $this->setPath('connections/{id}/credential_authentication/suggestion');
+    $this->setPath('security/connections/{id}/credential_authentication/suggestion');
     $this->setResources(['update']);
-    $this->setResourcePath('update', 'connections/{id}/credential_authentication/suggestion');
+    $this->setResourcePath('update', 'security/connections/{id}/credential_authentication/suggestion');
   }
 }
