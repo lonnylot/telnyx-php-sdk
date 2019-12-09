@@ -29,7 +29,10 @@ class TelnyxServiceProvider extends ServiceProvider implements DeferrableProvide
             $client = LegacyClient::getInstance('legacy_telnyx');
             $client->setApiKey(config('services.telnyx.legacy_api_key'));
             $client->setValidatorFactory($app['validator']);
-            $client->setAuthHeaders(['x-api-token' => $client->getApiKey()]);
+            $client->setAuthHeaders([
+              'x-api-user' => config('services.telnyx.legacy_api_user'),
+              'x-api-token' => $client->getApiKey()
+            ]);
 
             return $client;
         });
