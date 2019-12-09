@@ -38,7 +38,8 @@ class TelnyxServiceProvider extends ServiceProvider implements DeferrableProvide
     public function provides()
     {
         return [
-            Client::class
+            Client::class,
+            LegacyClient::class,
         ];
     }
 }
