@@ -16,20 +16,6 @@ To use the bindings, use Composer's autoload:
 
 `require_once('vendor/autoload.php');`
 
-### Laravel
-
-To use with Laravel you need to set your Telnyx API key in `app/config/services.php`
-
-```php
-[
-  'telnyx' => [
-    'api_key' => env('TELNYX_API_KEY', ''),
-  ]
-]
-```
-
-Now you can dependency inject `\Lonnylot\Telnyx\Client` in your Laravel application and it will be ready to use.
-
 ## Dependencies
 
 The library requires the [CrudSugar](https://github.com/lonnylot/crud-sugar/) library.
@@ -66,10 +52,26 @@ The resources are named as follows:
 
 ### Setup Client
 
+#### Non Laravel
+
 ```php
 $client = \Lonnylot\Telnyx\Client::getInstance('telnyx');
 $client->setApiKey('<your key>');
 ```
+
+#### Laravel
+
+To use with Laravel you need to set your Telnyx API key in `app/config/services.php`
+
+```php
+[
+  'telnyx' => [
+    'api_key' => env('TELNYX_API_KEY', ''),
+  ]
+]
+```
+
+Now you can dependency inject `\Lonnylot\Telnyx\Client` in your Laravel application and it will be ready to use.
 
 ### Use Endpoint
 
