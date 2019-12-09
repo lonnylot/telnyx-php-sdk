@@ -12,6 +12,8 @@ class Client extends BaseClient {
 
   private function registerEndpoints() {
     $this->registerEndpointClass(Connection::class);
+    $this->registerEndpointClass(ConnectionCredentialAuthentication::class);
+    $this->registerEndpointClass(ConnectionCredentialAuthenticationSuggestion::class);
   }
 
   public function getUserAgent(): string {
