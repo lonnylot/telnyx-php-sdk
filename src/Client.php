@@ -12,6 +12,7 @@ class Client extends BaseClient {
 
   private function registerEndpoints() {
     $this->registerEndpointClass(MessagingProfile::class);
+    $this->registerEndpointClass(Message::class);
     $this->registerEndpointClass(NumberOrder::class);
     $this->registerEndpointClass(NumberSearch::class);
     $this->registerEndpointClass(PhoneNumber::class);
